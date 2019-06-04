@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+	<div class="row">
+		<h6>score:</h6><p class="score"></p>
+	</div>
+	<div class="row">
+		<h6>juk:</h6><p class="juk"></p>
+	</div>
+
+	<script type="text/javascript">
+		let score = 0
+
+		let func = function(arg) {
+			score = score + arg
+			document.querySelector(".score").innerHTML = score
+		}
+
+
+		let juk = 0;
+		let fun = function(arg) {
+			juk = juk + arg
+			document.querySelector(".juk").innerHTML = juk
+		}
+		
+			
+
+		let timer = function(){
+			let elem = document.createElement('img');
+			document.body.appendChild(elem);
+			elem.src = "img.png";
+			elem.style.height = "100px";
+			elem.style.width = "100px";
+			elem.style.position = "absolute"
+			let rand = Math.random()*800;
+			let round = Math.round(rand);
+			let ran = Math.random()*500;
+			let roun = Math.round(ran);
+			elem.style.marginLeft = round + "px";
+			elem.style.marginTop = roun + "px";
+			fun(1);
+			elem.onclick = function(){
+				func(1)
+				elem.style.display = "none";
+			}
+			
+			
+		}
+
+		setInterval(timer,1000);
+
+		setTimeout(proverka,10000);	
+		
+	</script>
+</body>
+</html>
